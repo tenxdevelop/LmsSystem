@@ -1,10 +1,8 @@
 <?
-$PERM["search"]["5"]="W";
-$PERM["products"]["5"]="W";
-$PERM["services"]["5"]="W";
-$PERM["news"]["5"]="W";
-$PERM["contacts"]["5"]="W";
-$PERM["company"]["5"]="W";
-$PERM["index.php"]["5"]="W";
+$PERM["pub"]["5"]="T_8";
+$PERM["upload"]["5"]="T_8";
+$PERM["video"]["*"]="R";
+$PERM["online"]["*"]="R";
+$PERM["desktop_app"]["*"]="R";
 $PERM["/"]["*"]="R";
 ?>
