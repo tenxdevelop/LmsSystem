@@ -6,6 +6,7 @@ define("NOT_CHECK_PERMISSIONS", true);
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 require($_SERVER['DOCUMENT_ROOT'].'/local/vendor/autoload.php');
 
+
 use \Bitrix\Main\Context;
 use Legacy\General\Api;
 

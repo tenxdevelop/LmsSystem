@@ -14,7 +14,8 @@ class TestApi
     {
         $result = [];
 
-        $result[] = [
+        while ($arr = $query->fetch()) {
+            $result[] = [
                 'id' => $arr['ID'],
                 'name' => $arr['NAME'],
                 'code' => $arr['CODE'],

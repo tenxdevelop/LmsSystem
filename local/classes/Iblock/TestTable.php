@@ -1,10 +1,12 @@
 <?php
 
 namespace Legacy\Iblock;
+
 use Legacy\General\Constants;
 use Bitrix\Main\Entity\Query;
 use Bitrix\Main\Entity\ReferenceField;
 use Bitrix\Iblock\ElementTable;
+use Bitrix\Iblock\ElementPropertyTable;
 use Bitrix\Main\Entity\ExpressionField;
 use Bitrix\Main\DB\SqlExpression;
 use Bitrix\Main\Type\DateTime;
@@ -69,7 +71,7 @@ class TestTable extends \Bitrix\Iblock\ElementTable
             'ACTIVE_FROM',
             'ACTIVE_TO',
             'PHONE_VALUE' => 'PHONE.VALUE',
-            'CITY_VALUE' => 'CITY.VALUE', 
+            'CITY_VALUE' => 'CITY.VALUE',
             'PRICE_VALUE' => 'PRICE.VALUE',
         ]);
     }
