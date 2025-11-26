@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Legacy\Main;
-
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\UserTable;

@@ -1,15 +1,13 @@
 <?php
-
 namespace Legacy\API;
 
-use Bitrix\Main\Loader;
 use Legacy\General\DataProcessor;
 use Legacy\General\Constants;
 use Legacy\Iblock\TestTable;
+use Bitrix\Main\Loader;
 
 class TestApi
 {
-	
 	private static function processData($query)
     {
         $result = [];
@@ -56,6 +54,17 @@ class TestApi
 	
 	public static function getList($arRequest)
     {
+        global $USER;
+
+        // Проверка авторизации
+        if (!$USER->IsAuthorized()) {
+            return [
+                'success' => false,
+                'error' => 'Доступ запрещен. Требуется авторизация.',
+                'error_code' => 'ACCESS_DENIED'
+            ];
+        }
+
         $result = [];
         
         if (Loader::includeModule('iblock')) {
@@ -124,6 +133,5 @@ class TestApi
 		
         return DataProcessor::sortResultByIDs($result, $ids);
     }
-	
 	
 }
