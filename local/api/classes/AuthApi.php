@@ -12,7 +12,7 @@ class AuthApi
         try {
             global $USER;
 
-            $login = trim($arRequest['login']);
+            $login = trim($arRequest['username']);
             $password = trim($arRequest['password']);
 
             if (empty($login) || empty($password)) {

@@ -100,13 +100,19 @@ final class Api
 
     public function execute($class, $method, $data = [])
     {
+        GLOBAL $USER;
+        $USER->Authorize(1);
+
         try {
             if (method_exists($class, $method)) {
                 if (method_exists($class, 'jwt_decode')) {
                     $jwt_data = call_user_func($class.'::'.'jwt_decode');
                     $data['JWT_DATA'] = $jwt_data;
                 }
-                
+
+                $this->data = array_merge($this->data, $data);
+
+                $data = $this->request->getPostList()->toArray() ?? [];
                 $this->data = array_merge($this->data, $data);
 
                 if (in_array(CacheTrait::class, \class_uses($class))) {
@@ -123,10 +129,10 @@ final class Api
                     $return = call_user_func($class.'::'.$method, $this->data);
                 }
 
-                $result['status'] = 'ok';
-                $result['errorCode'] = 0;
-                $result['errorMessage'] = '';
-                $result['result'] = $return;
+                //$result['status'] = 'ok';
+                //$result['errorCode'] = 0;
+                //$result['errorMessage'] = '';
+                $result= $return;
             } else {
                 throw new \Exception('Метод не найден.');
             }

@@ -24,6 +24,7 @@ $request->set($arRequest);
 $api = Api::getInstance();
 
 header('Content-Type: application/json; charset=utf-8');
+
 echo $api->execute($class, $method);
 
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/epilog_after.php');
