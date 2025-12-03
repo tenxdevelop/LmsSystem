@@ -100,9 +100,7 @@ final class Api
 
     public function execute($class, $method, $data = [])
     {
-        GLOBAL $USER;
-        $USER->Authorize(1);
-
+        
         try {
             if (method_exists($class, $method)) {
                 if (method_exists($class, 'jwt_decode')) {
